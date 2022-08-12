@@ -1,57 +1,42 @@
 class Complex {
-    re: number;
-    im: number;
-
-    constructor(re: number = 0, im: number = 0) {
+    constructor(re = 0, im = 0) {
         this.re = re;
         this.im = im;
     }
-
-    square(): Complex {
+    square() {
         return new Complex(this.re ** 2 - this.im ** 2, 2 * this.re * this.im);
     }
-
-    add(x: Complex): Complex {
+    add(x) {
         return new Complex(this.re + x.re, this.im + x.im);
     }
-
-    sub(x: Complex): Complex {
+    sub(x) {
         return new Complex(this.re - x.re, this.im - x.im);
     }
-
-    distSq(): number {
-        return this.re ** 2 + this.im ** 2
+    distSq() {
+        return this.re ** 2 + this.im ** 2;
     }
-
-    dist(): number {
-        return Math.sqrt(this.distSq())
+    dist() {
+        return Math.sqrt(this.distSq());
     }
-
-    toString(): string {
+    toString() {
         return `${this.re} + ${this.im}i`;
     }
-
-    inBound(): boolean {
+    inBound() {
         return this.distSq() <= 4;
     }
-
-    abs(): Complex {
+    abs() {
         return new Complex(Math.abs(this.re), Math.abs(this.im));
     }
 }
-
 const cmath = {
-    square: (x: Complex): Complex => {
+    square: (x) => {
         return x.square();
     },
-    
-    add: (a: Complex, b: Complex): Complex => {
+    add: (a, b) => {
         return a.add(b);
     },
-
-    sub: (a: Complex, b: Complex): Complex => {
+    sub: (a, b) => {
         return a.sub(b);
     }
 };
-
-export { Complex, cmath }
+export { Complex, cmath };

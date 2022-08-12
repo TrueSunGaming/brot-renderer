@@ -1,11 +1,9 @@
 import { canvas, ctx } from "./canvas.js";
 import { drawPoint } from "./drawPoint.js";
-
 var drawing = false;
 var scale = 1;
 var offsetX = 0;
 var offsetY = 0;
-
 function drawBrot() {
     drawing = true;
     ctx.resetTransform();
@@ -20,5 +18,4 @@ function drawBrot() {
     console.timeEnd("drawing brot");
     drawing = false;
 }
-
 drawBrot();
